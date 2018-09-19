@@ -44,8 +44,8 @@ Parse_Arguments() {
 }
 
 HOST=localhost
-R1=10.10.30.188
-R2=10.10.30.188
+R1=10.10.30.134
+R2=10.10.30.134
 Parse_Arguments $@
 
 if [ "${HELPINFO}" == "true" ]; then
@@ -113,12 +113,7 @@ cat << EOF > DevServer_connection.json
                     "endorsingPeer": true,
                     "chaincodeQuery": true,
                     "eventSource": true
-		},
-                "peer2.org1.example.com": {
-                    "endorsingPeer": true,
-                    "chaincodeQuery": true,
-                    "eventSource": true
-                }
+		}
             }
         }
     },
@@ -127,8 +122,7 @@ cat << EOF > DevServer_connection.json
             "mspid": "Org1MSP",
             "peers": [
                 "peer0.org1.example.com",
-		"peer1.org1.example.com",
-                "peer2.org1.example.com"
+		"peer1.org1.example.com"
             ],
             "certificateAuthorities": [
                 "ca.org1.example.com"
@@ -155,10 +149,6 @@ cat << EOF > DevServer_connection.json
         "peer1.org1.example.com": {
             "url": "grpc://${HOST}:8051",
             "eventUrl": "grpc://${HOST}:8053"
-        },
-        "peer2.org1.example.com": {
-            "url": "grpc://${R1}:9051",
-            "eventUrl": "grpc://${R1}:9053"
         }
 
     },
@@ -171,7 +161,7 @@ cat << EOF > DevServer_connection.json
 }
 EOF
 
-PRIVATE_KEY="${DIR}"/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/f1c45ffa49f0bafc230a1fdf0f20ba381e91188557b91b2f415e9b895129a251_sk
+PRIVATE_KEY="${DIR}"/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/0cfb1b4e0c986120d13ec11ede610fac64155ad86385c20e08a38791086c3e2c_sk
 CERT="${DIR}"/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
 
 if [ "${NOIMPORT}" != "true" ]; then

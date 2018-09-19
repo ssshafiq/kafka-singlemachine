@@ -33,12 +33,7 @@
                     "endorsingPeer": true,
                     "chaincodeQuery": true,
                     "eventSource": true
-		},
-                "peer2.org1.example.com": {
-                    "endorsingPeer": true,
-                    "chaincodeQuery": true,
-                    "eventSource": true
-                }
+		}
             }
         }
     },
@@ -47,8 +42,7 @@
             "mspid": "Org1MSP",
             "peers": [
                 "peer0.org1.example.com",
-		"peer1.org1.example.com",
-                "peer2.org1.example.com"
+		"peer1.org1.example.com"
             ],
             "certificateAuthorities": [
                 "ca.org1.example.com"
@@ -61,10 +55,10 @@
             "url": "grpc://localhost:7050"
         },
         "orderer1.example.com": {
-            "url": "grpc://10.10.30.188:8050"
+            "url": "grpc://10.10.30.134:8050"
         },
         "orderer2.example.com": {
-            "url": "grpc://10.10.30.188:9050"
+            "url": "grpc://10.10.30.134:9050"
         }
     },
     "peers": {
@@ -75,10 +69,6 @@
         "peer1.org1.example.com": {
             "url": "grpc://localhost:8051",
             "eventUrl": "grpc://localhost:8053"
-        },
-        "peer2.org1.example.com": {
-            "url": "grpc://10.10.30.188:9051",
-            "eventUrl": "grpc://10.10.30.188:9053"
         }
 
     },

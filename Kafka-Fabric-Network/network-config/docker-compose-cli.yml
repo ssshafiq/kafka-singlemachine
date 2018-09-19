@@ -33,7 +33,7 @@ services:
        - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
        - FABRIC_CA_SERVER_CA_NAME=ca.org1.example.com
        - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
-       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/ad8316e7bfc67ce43cc2fe202a78a75e1a602221258ea6b7564b7196fc6a19bc_sk
+       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/f22de251dfdfbe2cd433d064727cf3591befa56a09de261b2e94633d0a583828_sk
        - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=behave #${CORE_PEER_NETWORKID}_
      ports:
        - "7054:7054"
